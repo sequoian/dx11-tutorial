@@ -28,8 +28,9 @@ public:
 	void GetProjectionMatrix(XMMATRIX&);
 	void GetWorldMatrix(XMMATRIX&);
 	void GetOrthoMatrix(XMMATRIX&);
-
 	void GetVideoCardInfo(char*, int&);
+	void TurnZBufferOn();
+	void TurnZBufferOff();
 
 private:
 	bool m_vsync_enabled;
@@ -46,4 +47,5 @@ private:
 	XMMATRIX m_projectionMatrix;
 	XMMATRIX m_worldMatrix;
 	XMMATRIX m_orthoMatrix;
+	ID3D11DepthStencilState* m_depthDisabledStencilState;
 };

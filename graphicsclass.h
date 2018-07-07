@@ -5,6 +5,12 @@
 #include "modelclass.h"
 #include "lightshaderclass.h"
 #include "lightclass.h"
+#include "bitmapclass.h"
+#include "textureshaderclass.h"
+
+// math for custom 2D rendering matrix
+#include <DirectXMath.h>
+using namespace DirectX;
 
 const bool FULL_SCREEN = false;
 const bool VSYNC_ENABLED = true;
@@ -31,4 +37,9 @@ private:
 	ModelClass* m_Model;
 	LightShaderClass* m_LightShader;
 	LightClass* m_Light;
+	BitmapClass* m_Bitmap;
+	TextureShaderClass* m_TextureShader;
+
+	// custom world matrix for the 2D rendering so it does't rotate with the cube
+	XMMATRIX m_cameraWorldMatrix = XMMatrixIdentity();
 };
