@@ -56,7 +56,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hWnd)
 	}
 
 	// Initialize the model object.
-	result = m_Model->Initialize(m_Direct3D->GetDevice(), m_Direct3D->GetDeviceContext(), (char*)"data/stone01.tga");
+	result = m_Model->Initialize(m_Direct3D->GetDevice(), m_Direct3D->GetDeviceContext(), (char*)"data/cube.txt", (char*)"data/stone01.tga");
 	if (!result)
 	{
 		MessageBox(hWnd, "Could not initialize the model object.", "Error", MB_OK);
@@ -86,7 +86,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hWnd)
 	}
 
 	// Initialize the light object.
-	m_Light->SetDiffuseColor(1.0f, 0.0f, 1.0f, 1.0f);
+	m_Light->SetDiffuseColor(1.0f, 1.0f, 1.0f, 1.0f);
 	m_Light->SetDirection(0.0f, 0.0f, 1.0f);
 
 
